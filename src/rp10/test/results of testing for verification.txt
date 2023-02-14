@@ -1,0 +1,121 @@
+ 
++-----------------------------------------------------------------------------------------------------+
+|    Saturation state: butane  / EPS = [ |prop.model[i] - prop.calc[i]| / prop.model[i]*100 ], % /    |
++-------------------------------+----------------------------------+----------------------------------+
+|  Sat. state at liq/vap curve  |  prop, [units] with : EPSmin, %  |  prop, [units] with : EPSmax, %  |
++-------------------------------+----------------------------------+----------------------------------+
+|  sat_state(liq, t [K])        |        t, [k]:  0.000000         |        t, [k]:  0.000000         |
+|  sat_state(liq, t [oC])       |        t, [k]:  0.000000         |        t, [k]:  0.000000         |
+|  sat_state(vap, t [K])        |        t, [k]:  0.000000         |        t, [k]:  0.000000         |
+|  sat_state(vap, t [oC])       |        t, [k]:  0.000000         |        t, [k]:  0.000000         |
+|  sat_state(liq, p [kPa])      |        t, [k]:  0.000000         |        t, [k]:  0.000000         |
+|  sat_state(liq, p [bar])      |        t, [k]:  0.000000         |        t, [k]:  0.000000         |
+|  sat_state(vap, p [kPa])      |        t, [k]:  0.000000         |        t, [k]:  0.000000         |
+|  sat_state(vap, p [bar])      |        t, [k]:  0.000000         |        t, [k]:  0.000000         |
++-------------------------------+----------------------------------+----------------------------------+
+ 
++----------------------------------------------------------------------------------------------------------------+
+|  Saturation state: butane-ethane-methane  / EPS = [ |prop.model[i] - prop.calc[i]| / prop.model[i]*100 ], % /  |
++-----------------------------------+-------------------------------------+--------------------------------------+
+|  Sat. state at liq/vap curve      |    prop, [units] with : EPSmin, %   |    prop, [units] with : EPSmax, %    |
++-----------------------------------+-------------------------------------+--------------------------------------+
+|  liq : f( t[K],   x[mol/mol] )    |          t, [k]:  0.000000          |          t, [k]:  0.000000           |
+|  liq : f( t[C],   x[kg/kg] )      |          t, [k]:  0.000000          |          t, [k]:  0.000000           |
+|  vap : f( t[K],   x[mol/mol] )    |          t, [k]:  0.000000          |          t, [k]:  0.000000           |
+|  vap : f( t[C],   x[kg/kg] )      |          t, [k]:  0.000000          |          t, [k]:  0.000000           |
+|  liq : f( p[kPa], x[mol/mol] )    |          t, [k]:  0.000000          |          t, [k]:  0.000000           |
+|  liq : f( p[bar], x[kg/kg] )      |          t, [k]:  0.000000          |          t, [k]:  0.000000           |
+|  vap : f( p[kPa], x[mol/mol] )    |          t, [k]:  0.000000          |          t, [k]:  0.000000           |
+|  vap : f( p[bar], x[kg/kg] )      |          t, [k]:  0.000000          |          t, [k]:  0.000000           |
++-----------------------------------+-------------------------------------+--------------------------------------+
+ 
+MY COMMENTS ON SAT_STATE TESTING: both butane and mixture showed exact fit of model and calculated data. 
+for all considered parametersr relative errors made up 0.000000. in the situation when all errors are 0,
+the first parameter in the list "t, [k]" was put into the results output table.
+ 
++--------------------------------------------------------------+---------------------+-------------------------+
+|  Spec.-state f(t,p,x): butane-ethane-methane                 |  EPSmin, %          |  EPSmax, %              |
++--------------------------------------------------------------+---------------------+-------------------------+
+|  l-phase   spec_state(t[k], p[kpa], x[molmol])[blk]       :  |  t, [k]:  0.000000  |  tcx, [wmk]:  0.000230  |
+|  2ph.      spec_state(t[k], p[kpa], x[molmol])[blk]       :  |  t, [k]:  0.000000  |  d, [moll]:  0.000035   |
+|  2ph_liq.  spec_state(t[k], p[kpa], x[molmol])[blk_liq]   :  |  t, [k]:  0.000000  |  tcx, [wmk]:  0.000234  |
+|  2ph_vap.  spec_state(t[k], p[kpa], x[molmol])[blk_vap]   :  |  t, [k]:  0.000000  |  tcx, [wmk]:  0.002221  |
+|  v-phase   spec_state(t[k], p[kpa], x[molmol])[blk]       :  |  t, [k]:  0.000000  |  tcx, [wmk]:  0.000833  |
+|  l-phase   spec_state(t[c], p[bar], x[kgkg])[blk]       :    |  t, [c]:  0.000000  |  tcx, [wmk]:  0.000237  |
++--------------------------------------------------------------+---------------------+-------------------------+
++---------------------------------------------------------------+---------------------+-------------------------+
+|  Spec.-state f(t,d,x): butane-ethane-methane                  |  EPSmin, %          |  EPSmax, %              |
++---------------------------------------------------------------+---------------------+-------------------------+
+|  l-phase   spec_state(t[k], d[moll], x[molmol])[blk]       :  |  t, [k]:  0.000000  |  p, [kpa]:  0.047124    |
+|  2ph.      spec_state(t[k], d[moll], x[molmol])[blk]       :  |  t, [k]:  0.000000  |  p, [kpa]:  0.000320    |
+|  2ph_liq.  spec_state(t[k], d[moll], x[molmol])[blk_liq]   :  |  t, [k]:  0.000000  |  p, [kpa]:  0.000320    |
+|  2ph_vap.  spec_state(t[k], d[moll], x[molmol])[blk_vap]   :  |  t, [k]:  0.000000  |  tcx, [wmk]:  0.002287  |
+|  v-phase   spec_state(t[k], d[moll], x[molmol])[blk]       :  |  t, [k]:  0.000000  |  tcx, [wmk]:  0.000834  |
+|  2ph.      spec_state(t[c], d[kgm3], x[kgkg])[blk]       :    |  t, [c]:  0.000000  |  h, [jkg]:  0.000256    |
+|  2ph_liq.  spec_state(t[c], d[kgm3], x[kgkg])[blk_liq]   :    |  t, [c]:  0.000000  |  tcx, [wmk]:  0.000227  |
+|  2ph_vap.  spec_state(t[c], d[kgm3], x[kgkg])[blk_vap]   :    |  t, [c]:  0.000000  |  tcx, [wmk]:  0.002168  |
++---------------------------------------------------------------+---------------------+-------------------------+
++-----------------------------------------------------------------+-----------------------+-------------------------+
+|  Spec.-state f(p,h,x): butane-ethane-methane                    |  EPSmin, %            |  EPSmax, %              |
++-----------------------------------------------------------------+-----------------------+-------------------------+
+|  l-phase   spec_state(p[kpa], h[jmol], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.000230  |
+|  2ph.      spec_state(p[kpa], h[jmol], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  d, [moll]:  0.000046   |
+|  2ph_liq.  spec_state(p[kpa], h[jmol], x[molmol])[blk_liq]   :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.000226  |
+|  2ph_vap.  spec_state(p[kpa], h[jmol], x[molmol])[blk_vap]   :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.002222  |
+|  v-phase   spec_state(p[kpa], h[jmol], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.000833  |
+|  2ph.      spec_state(p[bar], h[jkg], x[kgkg])[blk]       :     |  p, [kpa]:  0.000000  |  d, [moll]:  0.000208   |
+|  2ph_liq.  spec_state(p[bar], h[jkg], x[kgkg])[blk_liq]   :     |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.000248  |
+|  2ph_vap.  spec_state(p[bar], h[jkg], x[kgkg])[blk_vap]   :     |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.002130  |
++-----------------------------------------------------------------+-----------------------+-------------------------+
++------------------------------------------------------------------+-----------------------+-------------------------+
+|  Spec.-state f(p,s,x): butane-ethane-methane                     |  EPSmin, %            |  EPSmax, %              |
++------------------------------------------------------------------+-----------------------+-------------------------+
+|  l-phase   spec_state(p[kpa], s[jmolk], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.000230  |
+|  2ph.      spec_state(p[kpa], s[jmolk], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  d, [moll]:  0.000033   |
+|  2ph_liq.  spec_state(p[kpa], s[jmolk], x[molmol])[blk_liq]   :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.000234  |
+|  2ph_vap.  spec_state(p[kpa], s[jmolk], x[molmol])[blk_vap]   :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.002220  |
+|  v-phase   spec_state(p[kpa], s[jmolk], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.000834  |
+|  2ph.      spec_state(p[bar], s[jkgk], x[kgkg])[blk]       :     |  p, [kpa]:  0.000000  |  e, [jmol]:  0.000137   |
+|  2ph_liq.  spec_state(p[bar], s[jkgk], x[kgkg])[blk_liq]   :     |  p, [kpa]:  0.000000  |  e, [jkg]:  0.000361    |
+|  2ph_vap.  spec_state(p[bar], s[jkgk], x[kgkg])[blk_vap]   :     |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.002123  |
++------------------------------------------------------------------+-----------------------+-------------------------+
++-----------------------------------------------------------------+-----------------------+-------------------------+
+|  Spec.-state f(p,d,x): butane-ethane-methane                    |  EPSmin, %            |  EPSmax, %              |
++-----------------------------------------------------------------+-----------------------+-------------------------+
+|  l-phase   spec_state(p[kpa], d[moll], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.000234  |
+|  2ph.      spec_state(p[kpa], d[moll], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  e, [jkg]:  0.000743    |
+|  2ph_liq.  spec_state(p[kpa], d[moll], x[molmol])[blk_liq]   :  |  p, [kpa]:  0.000000  |  e, [jmol]:  0.000972   |
+|  2ph_vap.  spec_state(p[kpa], d[moll], x[molmol])[blk_vap]   :  |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.002270  |
+|  v-phase   spec_state(p[kpa], d[moll], x[molmol])[blk]       :  |  p, [kpa]:  0.000000  |  t, [c]:  0.010298      |
+|  2ph.      spec_state(p[bar], d[kgm3], x[kgkg])[blk]       :    |  p, [kpa]:  0.000000  |  h, [jkg]:  0.000543    |
+|  2ph_liq.  spec_state(p[bar], d[kgm3], x[kgkg])[blk_liq]   :    |  p, [kpa]:  0.000000  |  e, [jmol]:  0.000488   |
+|  2ph_vap.  spec_state(p[bar], d[kgm3], x[kgkg])[blk_vap]   :    |  p, [kpa]:  0.000000  |  tcx, [wmk]:  0.002166  |
++-----------------------------------------------------------------+-----------------------+-------------------------+
++-------------------------------------------------------------------+--------------------------+-------------------------+
+|  Spec.-state f(d,s,x): butane-ethane-methane                      |  EPSmin, %               |  EPSmax, %              |
++-------------------------------------------------------------------+--------------------------+-------------------------+
+|  l-phase   spec_state(d[moll], s[jmolk], x[molmol])[blk]       :  |  d, [moll]:  0.000000    |  p, [kpa]:  0.073737    |
+|  2ph.      spec_state(d[moll], s[jmolk], x[molmol])[blk]       :  |  d, [moll]:  0.000000    |  p, [bar]:  0.000519    |
+|  2ph_liq.  spec_state(d[moll], s[jmolk], x[molmol])[blk_liq]   :  |  cp, [jmolk]:  0.000000  |  p, [bar]:  0.000519    |
+|  2ph_vap.  spec_state(d[moll], s[jmolk], x[molmol])[blk_vap]   :  |  h, [jmol]:  0.000000    |  tcx, [wmk]:  0.002309  |
+|  v-phase   spec_state(d[moll], s[jmolk], x[molmol])[blk]       :  |  d, [moll]:  0.000000    |  t, [c]:  0.001511      |
+|  2ph.      spec_state(d[kgm3], s[jkgk], x[kgkg])[blk]       :     |  d, [kgm3]:  0.000000    |  p, [kpa]:  0.000456    |
+|  2ph_liq.  spec_state(d[kgm3], s[jkgk], x[kgkg])[blk_liq]   :     |  cv, [jmolk]:  0.000003  |  e, [jkg]:  0.000676    |
+|  2ph_vap.  spec_state(d[kgm3], s[jkgk], x[kgkg])[blk_vap]   :     |  e, [jkg]:  0.000005     |  tcx, [wmk]:  0.002200  |
++-------------------------------------------------------------------+--------------------------+-------------------------+
++-------------------------------------------------------------------+------------------------+-------------------------+
+|  Spec.-state f(h,s,x): butane-ethane-methane                      |  EPSmin, %             |  EPSmax, %              |
++-------------------------------------------------------------------+------------------------+-------------------------+
+|  l-phase   spec_state(h[jmol], s[jmolk], x[molmol])[blk]       :  |  h, [jmol]:  0.000000  |  p, [kpa]:  0.000576    |
+|  v-phase   spec_state(h[jmol], s[jmolk], x[molmol])[blk]       :  |  h, [jmol]:  0.000000  |  tcx, [wmk]:  0.000833  |
++-------------------------------------------------------------------+------------------------+-------------------------+
++-----------------------------------------------------------------+---------------------+-------------------------+
+|  Spec.-state f(t,q,x): butane-ethane-methane                    |  EPSmin, %          |  EPSmax, %              |
++-----------------------------------------------------------------+---------------------+-------------------------+
+|  2ph.      spec_state(t[k], q[molmol], x[molmol])[blk]       :  |  t, [k]:  0.000000  |  d, [kgm3]:  0.000137   |
+|  2ph_liq.  spec_state(t[k], q[molmol], x[molmol])[blk_liq]   :  |  t, [k]:  0.000000  |  tcx, [wmk]:  0.000235  |
+|  2ph_vap.  spec_state(t[k], q[molmol], x[molmol])[blk_vap]   :  |  t, [k]:  0.000000  |  tcx, [wmk]:  0.002204  |
+|  2ph.      spec_state(t[c], q[kgkg], x[kgkg])[blk]       :      |  t, [c]:  0.000000  |  d, [kgm3]:  0.000931   |
+|  2ph_liq.  spec_state(t[c], q[kgkg], x[kgkg])[blk_liq]   :      |  t, [c]:  0.000000  |  p, [bar]:  0.000805    |
+|  2ph_vap.  spec_state(t[c], q[kgkg], x[kgkg])[blk_vap]   :      |  t, [c]:  0.000000  |  tcx, [wmk]:  0.001977  |
++-----------------------------------------------------------------+---------------------+-------------------------+

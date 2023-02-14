@@ -1,0 +1,4 @@
+ctREFPROP~=0.10.2
+prettytable==3.6.0
+matplotlib~=3.6.1
+numpy==1.24.2
